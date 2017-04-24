@@ -186,19 +186,10 @@ class CallManager {
     };
   }
 
-  /*
-  function getState() {
-
-  }
-
-  function setState() {
-
-  }
-
   function transferToConference() {
-
+    // TODO: transfer from initialized state
+    // TODO: transfer from echo test to conference
   }
-  */
 
   function getMicId() {
     // Placeholder, will get the microphone ID for switching input device
