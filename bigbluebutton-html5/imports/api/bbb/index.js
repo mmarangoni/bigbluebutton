@@ -6,16 +6,16 @@ import Meetings from '/imports/api/meetings';
 class BBB {
 
   getUserId() {
-    let userID = Auth.userID;
+    const userID = Auth.userID;
     return userID;
   }
 
   getUsername() {
-    return Users.findOne({userId: this.getUserId()}).user.name;
+    return Users.findOne({ userId: this.getUserId() }).user.name;
   }
 
   getExtension() {
-    let extension = Meetings.findOne().voiceConf;
+    const extension = Meetings.findOne().voiceConf;
     return extension;
   }
 
@@ -40,10 +40,10 @@ class BBB {
   webRTCCallStarted(inEchoTest) {
     AudioManager.webRTCCallStarted(inEchoTest);
   }
-
-
 }
 
-if (window.BBB == undefined) {
-  window.BBB = new BBB();
-}
+export const initBBB = () => {
+  if (window.BBB === undefined) {
+    window.BBB = new BBB();
+  }
+};
